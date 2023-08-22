@@ -94,7 +94,7 @@ export default function makeRoutes(requireAuth = () => {}) {
                 main={<DashboardLoader path="/app" />}
                 topNav={
                   <TopNav
-                    title="Spoke Texting"
+                    title="Dispatch Texting"
                     orgId={props.params.organizationId}
                   />
                 }

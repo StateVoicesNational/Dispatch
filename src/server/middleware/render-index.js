@@ -39,7 +39,7 @@ export default function renderIndex(html, css, assetMap) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <title>Spoke</title>
+    <title>Dispatch</title>
     ${externalLinks}
     <style>
       /* CSS declarations go here */

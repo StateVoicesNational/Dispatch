@@ -141,7 +141,7 @@ export async function updateConfig(oldConfig, config, organization) {
     if (!config.applicationId) {
       finalConfig.applicationId = await createMessagingService(
         organization,
-        `Spoke app, org${organization.id}`,
+        `Dispatch app, org${organization.id}`,
         finalConfig
       );
     }

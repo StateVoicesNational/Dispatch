@@ -39,10 +39,10 @@ const TexterFaqs = ({ faqs }) => {
         </Card>
       ))}
       <Card>
-        <CardHeader title={`${faqs.length}. Who built Spoke?`} />
+        <CardHeader title={`${faqs.length}. Who built Dispatch?`} />
         <CardContent>
           <p>
-            Spoke is developed and maintained by people committed to fighting
+            Dispatch is State Voice's adaptation of MoveOn's Spoke<br></br><br></br>Dispatch and Spoke are developed and maintained by people committed to fighting
             oppressive systems and structures, including economic injustice,
             racism, patriarchy, and militarism.
           </p>
