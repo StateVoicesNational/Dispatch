@@ -9,6 +9,7 @@ import Link from "@material-ui/core/Link";
 import { compose } from "recompose";
 import Logo from "../assets/logo.jsx"
 
+
 export const styles = StyleSheet.create({
   container: {
     marginTop: "5vh",
@@ -108,15 +109,12 @@ class Home extends React.Component {
       </div>
     );
   }
-
+  
   render() {
     return (
       <div className={css(styles.container)}>
         <div className={css(styles.logoDiv)}>
-          <img
-            src={Logo}
-            className={css(styles.logoImg)}
-          />
+          <img src={Logo} className={css(styles.logoImg)}/>
         </div>
         <div className={css(styles.content)}>{this.renderContent()}</div>
       </div>

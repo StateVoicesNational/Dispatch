@@ -2,6 +2,7 @@ import { hasConfig, getConfig } from "../api/lib/config";
 import { getProcessEnvTz, getProcessEnvDstReferenceTimezone } from "../../lib";
 import { FaviconLogo } from "../../assets/logo.jsx"
 
+
 const canGoogleImport = hasConfig("GOOGLE_SECRET");
 
 const rollbarScript = process.env.ROLLBAR_CLIENT_TOKEN
@@ -40,7 +41,7 @@ export default function renderIndex(html, css, assetMap) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <title>Spoke</title>
+    <title>Dispatch</title>
     ${externalLinks}
     <style>
       /* CSS declarations go here */

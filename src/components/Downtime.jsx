@@ -10,10 +10,7 @@ class Downtime extends React.Component {
     return (
       <div className={css(styles.container)}>
         <div className={css(styles.logoDiv)}>
-          <img
-            src={Logo}
-            className={css(styles.logoImg)}
-          />
+          <img src={Logo} width="120px" alt="Logo"/>
         </div>
         <div className={css(styles.content)}>
           {window.DOWNTIME || window.DOWNTIME_TEXTER ? (
