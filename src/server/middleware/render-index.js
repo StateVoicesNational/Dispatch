@@ -2,7 +2,6 @@ import { hasConfig, getConfig } from "../api/lib/config";
 import { getProcessEnvTz, getProcessEnvDstReferenceTimezone } from "../../lib";
 import { FaviconLogo } from "../../assets/logo.jsx"
 
-
 const canGoogleImport = hasConfig("GOOGLE_SECRET");
 
 const rollbarScript = process.env.ROLLBAR_CLIENT_TOKEN
