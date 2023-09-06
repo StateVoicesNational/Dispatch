@@ -3,7 +3,7 @@ import React from "react";
 import theme from "../styles/theme";
 import { css } from "aphrodite";
 import { styles } from "../containers/Home";
-import Logo from "../assets/logo.jsx"
+import Logo from "../assets/logo.js"
 
 class Downtime extends React.Component {
   render() {

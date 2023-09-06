@@ -7,7 +7,7 @@ import theme from "../styles/theme";
 import { withRouter } from "react-router";
 import Link from "@material-ui/core/Link";
 import { compose } from "recompose";
-import Logo from "../assets/logo.jsx"
+import Logo from "../assets/logo.js"
 
 
 export const styles = StyleSheet.create({
