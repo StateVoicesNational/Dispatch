@@ -19,7 +19,7 @@ describe("renderIndex", () => {
     const { html, css, assetMap, store } = fakeArguments;
     const htmlMarkup = renderIndex(html, css, assetMap, store);
     expect(htmlMarkup).toContain(
-      '<link rel="icon" href="https://datastorespokevvn.blob.core.windows.net/assets/dispatch_logo_favicon.svg">'
+      '<link rel=\"icon\" href=\"https://datastorespokevvn.blob.core.windows.net/assets/dispatch_logo_favicon.svg\"/>'
     );
   });
 });
