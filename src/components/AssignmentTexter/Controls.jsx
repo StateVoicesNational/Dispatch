@@ -125,7 +125,7 @@ export class AssignmentTexterContactControls extends React.Component {
     let currentInteractionStep = null;
 
     if (availableSteps.length > 0) {
-     currentInteractionStep = deepCopy(
+      currentInteractionStep = deepCopy(
         availableSteps[availableSteps.length - 1]
       );
       currentInteractionStep.question.filteredAnswerOptions =
