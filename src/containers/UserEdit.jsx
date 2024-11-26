@@ -435,9 +435,9 @@ export class UserEditBase extends React.Component {
         </div>
         <Card style={{ marginTop: "50px", maxWidth: "256px" }}>
           <CardContent style={{ fontSize: "90%" }}>
-            Dispatch is State Voice's adaptation of MoveOn's Spoke.<br></br><br></br> Dispatch and Spoke are developed and maintained by people committed to fighting
-            oppressive systems and structures, including economic injustice,
-            racism, patriarchy, and militarism.
+	    Dispatch is State Voices deployment of Spoke, servicing our national affiliated network. <br/><br/>
+            Dispatch is developed and supported by individuals dedicated to challenging oppressive systems and structures, including economic injustice, racism, patriarchy, and militarism.<br/><br/>
+            Spoke is owned and maintained by State Voices.
           </CardContent>
         </Card>
       </div>
