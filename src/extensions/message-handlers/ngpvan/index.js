@@ -26,41 +26,41 @@ export const available = organization =>
     hasConfig("NGP_VAN_API_KEY_ENCRYPTED", organization)) &&
   hasConfig("NGP_VAN_APP_NAME", organization);
 
-export const preMessageSave = async ({ message, contact, organization }) => {
-  if (!message.is_from_contact){
-    return {};
-  }
+// export const preMessageSave = async ({ message, contact, organization }) => {
+//   if (!message.is_from_contact){
+//     return {};
+//   }
 
-  const clientChoiceData = await getActionChoiceData(Van, organization);
-  const initialTextResult =
-    getConfig("NGP_VAN_TEXT_BACK_CANVASS_RESULT", organization) ||
-    DEFAULT_NGP_VAN_TEXT_BACK_CANVASS_RESULT;
+//   const clientChoiceData = await getActionChoiceData(Van, organization);
+//   const initialTextResult =
+//     getConfig("NGP_VAN_TEXT_BACK_CANVASS_RESULT", organization) ||
+//     DEFAULT_NGP_VAN_TEXT_BACK_CANVASS_RESULT;
 
-  const textback = clientChoiceData.find(ccd => ccd.name === initialTextResult);
-  if (!textback) {
-    // eslint-disable-next-line no-console
-    console.error(
-      `NGPVAN message handler -- not handling message because no action choice data found for ${initialTextResult}`
-    );
+//   const textback = clientChoiceData.find(ccd => ccd.name === initialTextResult);
+//   if (!textback) {
+//     // eslint-disable-next-line no-console
+//     console.error(
+//       `NGPVAN message handler -- not handling message because no action choice data found for ${initialTextResult}`
+//     );
 
-    return {};
-  }
+//     return {};
+//   }
 
-  const body = JSON.parse(textback.details);
+//   const body = JSON.parse(textback.details);
 
-  return Van.postCanvassResponse(contact, organization, body)
-    .then(() => ({}))
-    .catch(caughtError => {
-      // eslint-disable-next-line no-console
-      console.error(
-        "Encountered exception in ngpvan.preMessageSave",
-        caughtError
-      );
-      return {};
-    });
+//   return Van.postCanvassResponse(contact, organization, body)
+//     .then(() => ({}))
+//     .catch(caughtError => {
+//       // eslint-disable-next-line no-console
+//       console.error(
+//         "Encountered exception in ngpvan.preMessageSave",
+//         caughtError
+//       );
+//       return {};
+//     });
 
 
-};
+// };
 
 export const postMessageSave = async ({ message, contact, organization }) => {
   if (!exports.available(organization)) {
@@ -68,7 +68,38 @@ export const postMessageSave = async ({ message, contact, organization }) => {
   }
 
   if (
-    message.is_from_contact ||
+    message.is_from_contact
+  ){
+    const clientChoiceData = await getActionChoiceData(Van, organization);
+    const initialTextResult =
+      getConfig("NGP_VAN_TEXT_BACK_CANVASS_RESULT", organization) ||
+      DEFAULT_NGP_VAN_TEXT_BACK_CANVASS_RESULT;
+
+    const texted = clientChoiceData.find(ccd => ccd.name === initialTextResult);
+    if (!texted) {
+      // eslint-disable-next-line no-console
+      console.error(
+        `NGPVAN message handler -- not handling message because no action choice data found for ${initialTextResult}`
+      );
+
+      return {};
+    }
+
+    const body = JSON.parse(texted.details);
+
+    return Van.postCanvassResponse(contact, organization, body)
+      .then(() => ({}))
+      .catch(caughtError => {
+        // eslint-disable-next-line no-console
+        console.error(
+          "Encountered exception in ngpvan.postMessageSave textback",
+          caughtError
+        );
+        return {};
+      });
+  }
+
+  if (
     !contact ||
     contact.message_status !== "needsMessage"
   ) {
